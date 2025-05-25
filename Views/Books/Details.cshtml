@@ -1,0 +1,32 @@
+@model MyLibrary.Models.Book
+
+@{
+    ViewData["Title"] = "Book Details";
+}
+
+<div class="card shadow mt-4">
+    <div class="row g-0">
+        <div class="col-md-5">
+            <img src="@(string.IsNullOrEmpty(Model.CoverImageUrl) 
+                          ? "https://via.placeholder.com/500x600?text=No+Image" 
+                          : Url.Content(Model.CoverImageUrl))" 
+                 class="img-fluid rounded-start w-100" 
+                 style="max-height: 100%; object-fit: cover;" 
+                 alt="@Model.Title" />
+        </div>
+        <div class="col-md-7">
+            <div class="card-body">
+                <h3 class="card-title mb-3">@Model.Title</h3>
+                <p class="card-text"><strong>Author:</strong> @Model.Author</p>
+                <p class="card-text"><strong>Genre:</strong> @Model.Genre</p>
+                <p class="card-text"><strong>Description:</strong> @Model.Description</p>
+                <p class="card-text"><strong>Publisher:</strong> @Model.Publisher</p>
+                <p class="card-text"><strong>Year Published:</strong> @Model.YearPublished</p>
+                <p class="card-text"><strong>Pages:</strong> @Model.Pages</p>
+                <p class="card-text"><strong>Language:</strong> @Model.Language</p>
+
+                <a href="/Books" class="btn btn-secondary mt-4">← Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>

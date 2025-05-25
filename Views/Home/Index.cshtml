@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+@section Styles {
+    <style>
+        .hero {
+            background-image: url('/images/library-banner.jpg'); /* Use your actual image */
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .book-list .book {
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .book h5 {
+            font-weight: bold;
+        }
+
+        .book p {
+            margin: 0;
+            font-style: italic;
+            color: #555;
+        }
+    </style>
+}
+
+<div class="hero">
+    Welcome to MyLibrary
+</div>
+
+<h2 class="mb-4">Featured Books</h2>
+
+<div class="row book-list">
+    <div class="col-md-4 book">
+        <h5>The Great Gatsby</h5>
+        <p>A classic novel by F. Scott Fitzgerald about the American dream.</p>
+    </div>
+    <div class="col-md-4 book">
+        <h5>1984</h5>
+        <p>George Orwell's dystopian masterpiece about surveillance and freedom.</p>
+    </div>
+    <div class="col-md-4 book">
+        <h5>To Kill a Mockingbird</h5>
+        <p>Harper Lee’s story of racial injustice and childhood innocence.</p>
+    </div>
+</div>

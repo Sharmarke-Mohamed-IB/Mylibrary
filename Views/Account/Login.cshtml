@@ -1,0 +1,27 @@
+@{
+    ViewData["Title"] = "Login"; // Set the page title
+}
+
+<h2>Login</h2>
+
+<!-- Show error message if login failed -->
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger">@ViewBag.Error</div>
+}
+
+<!-- Login form posts to the Login action -->
+<form asp-action="Login" method="post">
+    <div class="mb-3">
+        <label>Username</label>
+        <input name="username" class="form-control" required />  <!-- Username input -->
+    </div>
+    <div class="mb-3">
+        <label>Password</label>
+        <input name="password" type="password" class="form-control" required />  <!-- Password input -->
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button> <!-- Submit button -->
+</form>
+
+<!-- Link to registration page if user doesn't have an account -->
+<p>Don't have an account? <a asp-action="Register">Register here</a></p>
